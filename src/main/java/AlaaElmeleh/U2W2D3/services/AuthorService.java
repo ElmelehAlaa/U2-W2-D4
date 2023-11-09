@@ -1,6 +1,6 @@
 package AlaaElmeleh.U2W2D3.services;
 
-import AlaaElmeleh.U2W2D3.config.EmailSender;
+//import AlaaElmeleh.U2W2D3.config.EmailSender;
 import AlaaElmeleh.U2W2D3.entities.Author;
 
 import AlaaElmeleh.U2W2D3.exceptions.BadRequestException;
@@ -24,8 +24,8 @@ import java.io.IOException;
 public class AuthorService {
     @Autowired
     private AuthorsRepository authorsRepository;
-    @Autowired
-    EmailSender emailSender;
+//    @Autowired
+//    EmailSender emailSender;
     @Autowired
     private Cloudinary cloudinary;
 
@@ -41,7 +41,7 @@ newAuthor.setAvatar("http://ui-avatars.com/api/?name="+body.name() + "+" + body.
        newAuthor.setEmail(body.email());
        newAuthor.setDataNascita(body.dataNascita());
        Author savedAuthor = authorsRepository.save(newAuthor);
-       emailSender.sendRegistrationEmail(body.email());
+//       emailSender.sendRegistrationEmail(body.email());
        return savedAuthor;
     }
 
